@@ -17,26 +17,21 @@ int main(){
     return 0;
 }
 
-int lelinha(char linhaAntes, int tam){
+int lelinha(char linhaAntes[], int tam){
     int i, c;
-    for(i = 0; i < tam - 1 && (c = getchar()) != EOF && c != '\n'){
+    for(i = 0; i < tam - 1 && (c = getchar()) != EOF && c != '\n'; i++){
         linhaAntes[i] = c;
     }
-    if (c == '\n'){
-        linhaAntes[i] = c;
-        i++;
-    }
+    linhaAntes[i] = '\0';
     return i;
 }
 
 int inverter(char linhaPraInverter[], char linhaParaArmazenar[], int tam){
-    int i, tamanhoTotal;
-    tamanhoTotal = tam
-    for(i = 0; i < tamanhoTotal && tam != 0; i++){
-        linhaParaArmazenar[i] = linhaPraInverter[tam];
-        tam--;
+    int i;
+    for (i = 0; i < tam; i++){
+        linhaParaArmazenar[i] = linhaPraInverter[tam - 1 - i];
     }
-    linhaParaArmazenar[++i] = '\0';
+    linhaParaArmazenar[i] = '\0';
     return 0;
 }
 
@@ -45,4 +40,6 @@ int imprime(char linhaParaImprimir[], int tam){
     for(i = 0; i < tam; i++){
         putchar(linhaParaImprimir[i]);
     }
+    putchar('\n');
+    return 0;
 }
